@@ -1,0 +1,23 @@
+{
+    "action": "All",
+    "ckpt": "checkpoint/test",
+    "data_dir": "data/",
+    "dropout": 0.5,
+    "epochs": 200,
+    "exp": "test",
+    "is_train": true,
+    "job": 8,
+    "linear_size": 1024,
+    "load": "",
+    "lr": 0.001,
+    "lr_decay": 100000,
+    "lr_gamma": 0.96,
+    "max_norm": true,
+    "num_stage": 2,
+    "procrustes": false,
+    "resume": false,
+    "test": false,
+    "test_batch": 1024,
+    "train_batch": 1024,
+    "use_hg": false
+}

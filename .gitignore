@@ -5,18 +5,14 @@
 # for redundant files
 *~
 *.pyc
-*.jpg
 *.swp
-*.png
 *.tar.gz
 *.zip
 *.tar
-*.json
 
 
 # for data and experiments directories
 ckpt/
-checkpoint/
 data/
 h36m/
 h36m_ft/
