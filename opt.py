@@ -76,7 +76,9 @@ class Options:
 
     def parse(self):
         self._initial()
-        self.opt = self.parser.parse_args()
+        # self.opt = self.parser.parse_args()
+        self.opt = self.parser.parse_args("")
+
         # do some pre-check
         ckpt = os.path.join(self.opt.ckpt, self.opt.exp)
         if not os.path.isdir(ckpt):
