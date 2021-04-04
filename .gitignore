@@ -25,3 +25,4 @@ Would skip repository src/progress
 all.avi
 AlphaPose_all.avi
 *.pkl
+*.mp4
