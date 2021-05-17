@@ -42,6 +42,10 @@ class Linear(nn.Module):
 
 
 class LinearModel(nn.Module):
+    # def __init__(self,
+    #              linear_size=1024,
+    #              num_stage=5,
+    #              p_dropout=0.3):
     def __init__(self,
                  linear_size=1024,
                  num_stage=2,
@@ -53,7 +57,7 @@ class LinearModel(nn.Module):
         self.num_stage = num_stage
 
         # 2d joints
-        self.input_size =  16 * 2
+        self.input_size = 16 * 2
         # 3d joints
         self.output_size = 16 * 3
 
@@ -86,3 +90,52 @@ class LinearModel(nn.Module):
         y = self.w2(y)
 
         return y
+
+
+class OptunaModel(nn.Module):
+    def __init__(self,
+                 linear_size=1024,
+                 num_stage=5,
+                 p_dropout=0.3):
+
+        super(OptunaModel, self).__init__()
+
+        self.linear_size = linear_size
+        self.p_dropout = p_dropout
+        self.num_stage = num_stage
+
+        # 2d joints
+        self.input_size = 16 * 2
+        # 3d joints
+        self.output_size = 16 * 3
+
+        # process input to linear size
+        self.w1 = nn.Linear(self.input_size, self.linear_size)
+        self.batch_norm1 = nn.BatchNorm1d(self.linear_size)
+
+        self.linear_stages = []
+        for l in range(num_stage):
+            self.linear_stages.append(Linear(self.linear_size, self.p_dropout))
+        self.linear_stages = nn.ModuleList(self.linear_stages)
+
+        # post processing
+        self.w2 = nn.Linear(self.linear_size, self.output_size)
+
+        self.relu = nn.ReLU(inplace=True)
+        self.dropout = nn.Dropout(self.p_dropout)
+
+    def forward(self, x):
+        # pre-processing
+        y = self.w1(x)
+        y = self.batch_norm1(y)
+        y = self.relu(y)
+        y = self.dropout(y)
+
+        # linear layers
+        for i in range(self.num_stage):
+            y = self.linear_stages[i](y)
+
+        y = self.w2(y)
+
+        return y
+

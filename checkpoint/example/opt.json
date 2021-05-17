@@ -1,0 +1,23 @@
+{
+    "action": "All",
+    "ckpt": "checkpoint/example",
+    "data_dir": "data/",
+    "dropout": 0.3,
+    "epochs": 200,
+    "exp": "example",
+    "is_train": true,
+    "job": 8,
+    "linear_size": 1024,
+    "load": "",
+    "lr": 0.001,
+    "lr_decay": 100000,
+    "lr_gamma": 0.96,
+    "max_norm": true,
+    "num_stage": 2,
+    "procrustes": false,
+    "resume": false,
+    "test": false,
+    "test_batch": 4096,
+    "train_batch": 4096,
+    "use_hg": false
+}

@@ -56,13 +56,21 @@ class Options:
         #                     Running options
         # ===============================================================
         self.parser.add_argument('--use_hg',         dest='use_hg', action='store_true', help='whether use 2d pose from hourglass')
-        self.parser.add_argument('--lr',             type=float,  default=1.0e-3)
-        self.parser.add_argument('--lr_decay',       type=int,    default=100000, help='# steps of lr decay')
-        self.parser.add_argument('--lr_gamma',       type=float,  default=0.96)
+        self.parser.add_argument('--lr',             type=float,  default=0.0006495169217159662)
+        # self.parser.add_argument('--lr',             type=float,  default=1.0e-3)
+
+        self.parser.add_argument('--lr_decay',       type=int,    default=150000, help='# steps of lr decay')
+        # self.parser.add_argument('--lr_decay',       type=int,    default=100000, help='# steps of lr decay')
+
+        self.parser.add_argument('--lr_gamma',       type=float,  default=0.9)
+        # self.parser.add_argument('--lr_gamma',       type=float,  default=0.96)
+
         self.parser.add_argument('--epochs',         type=int,    default=200)
-        self.parser.add_argument('--dropout',        type=float,  default=0.5, help='dropout probability, 1.0 to make no dropout')
-        self.parser.add_argument('--train_batch',    type=int,    default=1024)
-        self.parser.add_argument('--test_batch',     type=int,    default=1024)
+        self.parser.add_argument('--dropout',        type=float,  default=0.3, help='dropout probability, 1.0 to make no dropout')
+        # self.parser.add_argument('--dropout',        type=float,  default=0.3, help='dropout probability, 1.0 to make no dropout')
+
+        self.parser.add_argument('--train_batch',    type=int,    default=4096)
+        self.parser.add_argument('--test_batch',     type=int,    default=4096)
         self.parser.add_argument('--job',            type=int,    default=8, help='# subprocesses to use for data loading')
         self.parser.add_argument('--no_max',         dest='max_norm', action='store_false', help='if use max_norm clip on grad')
         self.parser.add_argument('--max',            dest='max_norm', action='store_true', help='if use max_norm clip on grad')

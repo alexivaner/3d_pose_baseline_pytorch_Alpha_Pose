@@ -23,7 +23,7 @@ import src.utils as utils
 import src.misc as misc
 import src.log as log
 
-from src.model import LinearModel, weight_init
+from src.model import LinearModel, OptunaModel, weight_init
 from src.datasets.human36m import Human36M
 
 
@@ -38,7 +38,9 @@ def main(opt):
 
     # create model
     print(">>> creating model")
-    model = LinearModel()
+    # model = LinearModel()
+    model = OptunaModel()
+
     model = model.cuda()
     model.apply(weight_init)
     print(">>> total params: {:.2f}M".format(sum(p.numel() for p in model.parameters()) / 1000000.0))

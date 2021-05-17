@@ -67,7 +67,7 @@ def save_options(opt, path):
 
 def save_ckpt(state, ckpt_path, is_best=True):
     if is_best:
-        file_path = os.path.join(ckpt_path, 'ckpt_best.pth.tar')
+        file_path = os.path.join(ckpt_path, 'ckpt_best_1.pth.tar')
         torch.save(state, file_path)
     else:
         file_path = os.path.join(ckpt_path, 'ckpt_last.pth.tar')

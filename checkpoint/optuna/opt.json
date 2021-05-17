@@ -1,0 +1,23 @@
+{
+    "action": "All",
+    "ckpt": "checkpoint/optuna",
+    "data_dir": "data/",
+    "dropout": 0.3,
+    "epochs": 200,
+    "exp": "optuna",
+    "is_train": true,
+    "job": 8,
+    "linear_size": 1024,
+    "load": "",
+    "lr": 0.0006495169217159662,
+    "lr_decay": 150000,
+    "lr_gamma": 0.9,
+    "max_norm": true,
+    "num_stage": 2,
+    "procrustes": false,
+    "resume": false,
+    "test": false,
+    "test_batch": 4096,
+    "train_batch": 4096,
+    "use_hg": false
+}
