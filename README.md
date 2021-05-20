@@ -2,6 +2,7 @@
  Another Contributor: [Rashid Ali](https://github.com/rashidch) <br>
  This is one of the repository code for Variable View Position and Angle Human Behavior inside the Elevator<br>
  For our paper click  [here](https://github.com/alexivaner)
+ Dataset licensed by Human 3.6M download [here](http://vision.imar.ro/human3.6m/description.php)
  
  This code is for predicting 2D Alpha Pose to 3D Pose using 3D Pose Baseline. All of the neural network here is built using Pytorch. For full code including classification, you can click [here](https://github.com/alexivaner)<br>
  
@@ -51,10 +52,21 @@ This test is using multicam dataset where the same action taken with 8 different
 
 ## Optimization with Optuna 
 Original version is refer to original 3D Pose Baseline from [this repository](https://github.com/una-dinosauria/3d-pose-baseline) <br>
-Pytorch version is refer to original 3D Pose Baseline from [this repository](https://github.com/weigq/3d_pose_baseline_pytorch) (I retrain with their default setting) <br>
-We try to do hyperparameter tuning using optuna and found better result with better MJPE (Mean Per Join Position Error)
+Pytorch version is refer to original 3D Pose Baseline from [this repository](https://github.com/weigq/3d_pose_baseline_pytorch) ( retrained using their default setting ) <br>
+We try to do hyperparameter tuning using optuna and found better result with better MJPE (Mean Per Join Position Error). Our final hyperparameter shown below:<br>
+```
+Best trial:
+  Params: 
+    lr: 0.0006495169217159662
+    lr_decay: 150000
+    gamma: 0.9
+    linear_size: 1024
+    p_dropout: 0.3
+    num_stage: 5
+    optimizer: Adam
+```
 
-|  | direct. | discuss. | eat. | greet. | phone | photo | pose | purch. | sit | sitd. | somke | wait | walkd. | walk | walkT | avg |
+|  | direct. | discuss. | eat. | greet. | phone | photo | pose | purch. | sit | sitd. | smoke | wait | walkd. | walk | walkT | avg |
 | :--: | :--: | :--: | :--: | :--: |  :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 | original version | 37.7 | 44.4 | 40.3 | 42.1 | 48.2 | 54.9 | 44.4 | 42.1 | 54.6 | 58.0 | 45.1 | 46.4 | 47.6 | 36.4 | 40.4 | 45.5|
 | pytorch version | 35.9 | 42.9 | 37.3 | 40.2 | 43.1 | 51.2 | 44.0 | 37.9 | 51.9 | 53.0 | 41.4 | 42.1 | 43.6 | 32.8 | 35.2 | 42.2 |
