@@ -38,8 +38,8 @@ def main(opt):
 
     # create model
     print(">>> creating model")
-    # model = LinearModel()
-    model = OptunaModel()
+    model = LinearModel()
+    # model = OptunaModel()
 
     model = model.cuda()
     model.apply(weight_init)
