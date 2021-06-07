@@ -30,3 +30,5 @@ AlphaPose_all.avi
 *.mp4
 Human36m.rar
 inference_result_npy/taoyuan_angle1_3D_Original_augmented.json
+*.pickle
+*.json
