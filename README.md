@@ -1,7 +1,8 @@
 # 2D Alpha Pose to 3D Skeleton 
  Another Contributor: [Rashid Ali](https://github.com/rashidch) <br>
- This is one of the repository code for Variable View Position and Angle Human Behavior inside the Elevator<br>
- For our paper click  [here](https://github.com/alexivaner)
+ This is part of the repository code for Transform-based One-Shot Learning with Variable Camera Angle for Human Behavior Recognition Inside the Elevator <br>
+ and also part of my Master Thesis (Design and Implementation of Transform­based EfficientLearning with Variable Camera Angle for Human BehaviorRecognition inside the Elevator)
+ For our paper  (Still on the way to published) click  [here](https://github.com/alexivaner)
  Dataset licensed by Human 3.6M download [here](http://vision.imar.ro/human3.6m/description.php)
  
  This code is for predicting 2D Alpha Pose to 3D Pose using 3D Pose Baseline. All of the neural network here is built using Pytorch. For full code including classification, you can click [here](https://github.com/alexivaner)<br>
@@ -11,6 +12,7 @@
  1. [3D Pose Baseline](https://github.com/una-dinosauria/3d-pose-baseline)
 2. [3D Pose Baseline Pytorch Implementation](https://github.com/weigq/3d_pose_baseline_pytorch)
 3. [2D Open Pose to 3D Skeleton](https://github.com/ArashHosseini/openpose)
+4. [Alpha Pose](https://github.com/MVIG-SJTU/AlphaPose)
  
 # OUR CONTRIBUTION
 Below is our contribution in this repository:<br>
@@ -18,8 +20,14 @@ Below is our contribution in this repository:<br>
 2. Improve 3D Pose Baseline Accuracy by tuning the hyperparameter using Optuna Hyperparameter Search
 3. Provide function to map COCO Skeleton Format to Human3.6M Format
 4. Provide function to transform 3D Skeleton to another reference skeleton (To match angle and position between two skeleton)
-5. Provide normalization of Human3.6M skeleton using Eucledian Distances
-6. Provide jupyter notebook for visualize all the skeleton result (You can use this one for research purposes)
+5. Provide jupyter notebook for visualize all the skeleton result (You can use this one for research purposes)
+
+# HOW TO USE
+1. Obtain license for Human3.6M in [here](http://vision.imar.ro/human3.6m/description.php) and download the dataset.
+2. Open alpha pose skeleton from your images or video in .json file using [this repository](https://github.com/MVIG-SJTU/AlphaPose)
+3. Open "src/Full Experiment.ipynb" to examine all the code and doing experiment with this code (This code contain all the experiment including visualization, etc)
+4. Open "src/Full Pipeline 2D to 3D npy from Alpha Pose.ipynb" to doing 3D Skeleton prediction from Alpha Pose json file. You will receive 3D Skeleton in NPY and JSON file.
+5. Feel free to explore those two codes and use it for your needs.
 
 # OUR TASK
 ## Problem Scenario
